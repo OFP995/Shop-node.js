@@ -1,0 +1,10 @@
+include header 
+h2 hello
+p #{foo}
+h3 #{bar}
+each val, index in goods 
+ p #{val['name']}
+ img(
+    src='/images/'+val['image']
+    class='test'
+ )

